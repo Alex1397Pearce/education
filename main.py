@@ -124,6 +124,52 @@ def calculate_area_2(list_shapes: Union[Rectangle, Circle]):
 
 class BankAccount:
     def __init__(self):
-        pass
+        self.__balance = 0
 
-    def d
+    def get_Balance(self):
+        print(self.__balance)
+
+    def deposit(self, money):
+        self.__balance = self.__balance + money
+
+    def withdraw(self, money):
+        if self.__balance > money:
+            self.__balance = self.__balance - money
+        else:
+            print("недостаточно средств")
+
+acc00551166 = BankAccount()
+# acc00551166.get_Balance()
+acc00551166.deposit(1000)
+# acc00551166.get_Balance()
+# acc00551166.withdraw(1500)
+# acc00551166.get_Balance()
+# acc00551166.withdraw(500)
+# acc00551166.get_Balance()
+
+# Задание 6
+
+class Logger:
+    @staticmethod
+    def decorator(func):
+        def wrapper(*args):
+            result = func(*args)
+            print(f"Произведено выполнение функции {func}")
+            return result
+        return wrapper
+
+logger = Logger()
+
+
+class MicroFinance(BankAccount):
+    def __init__(self, name):
+        super().__init__()
+        self.name = name
+
+    @logger.decorator
+    def show_name(self, mess):
+        return f"||{mess}||-||{self.name}||"
+
+microkred = MicroFinance("Имя_Персонажа")
+
+print(microkred.show_name("test"))
