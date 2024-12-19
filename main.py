@@ -1,16 +1,30 @@
-# This is a sample Python script.
+# Задание 1
+class Animal():
+    def Speak(self):
+        return "I can't speak"
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-#test dd 22
+    def Move(self):
+        return "I can't move"
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+8 to toggle the breakpoint.
+class Dog(Animal):
+    def Speak(self):
+        print("Wow")
+
+    def Move(self):
+        print("Тыгдык-тыгдык")
+
+class Bird(Animal):
+    def Speak(self):
+        print("Чик-чирик")
+
+    def Move(self):
+        print("I belive I can flyyy")
+
+some_animal = Dog()
+
+some_animal.Move()
+some_animal.Speak()
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+# Задание 2
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
