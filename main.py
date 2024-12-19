@@ -212,5 +212,6 @@ class Config:
             cls._instance = super().__new__()
         return cls._instance
 
-    _path_to_db = r"\\server\folder\database"
+    __path_to_db = r"\\server\folder\database"
+
 
