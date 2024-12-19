@@ -120,3 +120,9 @@ def calculate_area_2(list_shapes: Union[Rectangle, Circle]):
 # print(calculate_area_2(list_shapes))
 #
 # Задание 5
+
+
+class BankAccount:
+    def __init__(self):
+        pass
+
