@@ -54,3 +54,69 @@ class Student(Person):
 
 # Задание 3
 
+from abc import ABC, abstractmethod
+import math
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.height * self.width
+
+    def perimeter(self):
+        return 2 * (self.height + self.width)
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return math.pi * (self.radius ** 2)
+
+    def perimeter(self):
+        return math.pi * self.radius * 2
+
+
+# rectangle = Rectangle(4, 5)
+# print("Площадь:", rectangle.area())
+# print("Периметр:", rectangle.perimeter())
+#
+# rectangle2 = Rectangle(7, 6)
+# print("Площадь:", rectangle2.area())
+#
+# circle = Circle(3)
+# print("Площадь:", circle.area())
+# print("Периметр:", circle.perimeter())
+
+
+# Задание 4
+
+from typing import Union
+
+# Вариант 1
+def calculate_area(arg1: Shape, *args: Shape):
+    Sum_area = arg1.area()
+    for arg in args:
+        Sum_area = Sum_area + arg.area()
+    return Sum_area
+
+
+# Вериант 2
+def calculate_area_2(list_shapes: Union[Rectangle, Circle]):
+    Sum_area = 0
+    for shape in list_shapes:
+        Sum_area = Sum_area + shape.area()
+    return Sum_area
+
+# print(calculate_area(rectangle, circle, rectangle2))
+# list_shapes = (rectangle, circle, rectangle2)
+# print(calculate_area_2(list_shapes))
+#
+# Задание 5
