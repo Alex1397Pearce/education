@@ -45,13 +45,13 @@ class Bird(Animal):
         print("Чик-чирик")
 
     def Move(self):
-        print("I belive I can flyyy")
+        print("I believe I can flyyy")
 
-# some_animal = Dog()
-#
-# test = some_animal.Move()
-# print(test)
-# some_animal.Speak()
+some_animal = Dog()
+
+test = some_animal.Move()
+print(test)
+some_animal.Speak()
 
 
 # Задание 2
@@ -214,4 +214,8 @@ class Config:
 
     __path_to_db = r"\\server\folder\database"
 
-# RRD
+conf = Config()
+configuration = Config()
+
+if conf is configuration:
+    print("yes")
