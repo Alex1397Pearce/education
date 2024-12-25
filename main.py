@@ -49,9 +49,9 @@ class Bird(Animal):
 
 some_animal = Dog()
 
-test = some_animal.Move()
-print(test)
-some_animal.Speak()
+# test = some_animal.Move()
+# print(test)
+# some_animal.Speak()
 
 
 # Задание 2
@@ -209,13 +209,15 @@ class Config:
     _instance = None
     def __new__(cls, *args, **kwargs):
         if not cls._instance:
-            cls._instance = super().__new__()
+            cls._instance = super().__new__(cls, *args, **kwargs)
         return cls._instance
 
     __path_to_db = r"\\server\folder\database"
 
-conf = Config()
-configuration = Config()
+# region Description
+conf = Config("test",123)
+configuration = Config("test",123)
+# endregion
 
 if conf is configuration:
     print("yes")
