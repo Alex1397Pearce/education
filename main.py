@@ -38,7 +38,8 @@ class Dog(Animal):
         print("Wow")
 
     def Move(self):
-        print("Тыгдык-тыгдык")
+        move_type = "Тыгдык-тыгдык"
+        print(move_type)
 
 class Bird(Animal):
     def Speak(self):
@@ -156,7 +157,7 @@ class BankAccount:
     def get_Balance(self):
         print(self.__balance)
 
-    def deposit(self, money):
+    def add_money(self, money):
         self.__balance = self.__balance + money
 
     def withdraw(self, money):
